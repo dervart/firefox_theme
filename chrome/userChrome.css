@@ -505,9 +505,75 @@ toolbarspring,
         display: none !important;
     }
 }
+
+/* Sidebar */
+html:not([privatebrowsingmode="temporary"]) #sidebar-header {
+    display: none;
+}
+html:not([privatebrowsingmode="temporary"]) #sidebar-box {
+    --uc-sidebar-width: 45px;
+    --uc-sidebar-hover-width: 360px;
+    --uc-autohide-sidebar-delay-before: 125ms;
+    --uc-autohide-sidebar-delay-after: 300ms;
+    --uc-autohide-transition-duration: 300ms;
+    --uc-autohide-transition-type: ease-in-out;
+    position: relative;
+    min-width: var(--uc-sidebar-width) !important;
+    width: var(--uc-sidebar-width) !important;
+    max-width: var(--uc-sidebar-width) !important;
+    z-index: 1;
+}
+#sidebar-box {
+    background-color: var(--base-100) !important;
+}
+#sidebar {
+    border: var(--base-100);
+    border-radius: var(--content-border-radius);
+    background-color: var(--base-100) !important;
+}
+
+#sidebar-box[positionend]{ direction: rtl }
+#sidebar-box[positionend] > *{ direction: ltr }
+
+#sidebar-box[positionend]:-moz-locale-dir(rtl){ direction: ltr }
+#sidebar-box[positionend]:-moz-locale-dir(rtl) > *{ direction: rtl }
+
+html:not([privatebrowsingmode="temporary"])
+#main-window[sizemode="fullscreen"]
+#sidebar-box {
+--uc-sidebar-width: 1px;
+}
+html:not([privatebrowsingmode="temporary"]) #sidebar-splitter {
+    display: none;
+}
+html:not([privatebrowsingmode="temporary"]) #sidebar {
+    transition: all var(--uc-autohide-transition-duration)
+    var(--uc-autohide-transition-type) var(--uc-autohide-sidebar-delay-after) !important;
+    min-width: var(--uc-sidebar-width) !important;
+}
+html:not([privatebrowsingmode="temporary"]) #sidebar-box:hover > #sidebar {
+    min-width: var(--uc-sidebar-hover-width) !important;
+    transition-delay: var(--uc-autohide-sidebar-delay-before) !important;
+}
+html:not([privatebrowsingmode="temporary"]) .sidebar-panel {
+    background-color: transparent !important;
+    color: var(--newtab-text-primary-color) !important;
+}
 /* My changes */
+/* Hide alltabs button */
 #alltabs-button {
-  display: none !important;
+display: none !important;
+}
+/* My theme*/
+:root{
+    --toolbar-bgcolor: transparent;
+    --lg: 1rem;
+    --shadow:0 2px 12px #00000040;
+    --base-100: var(--toolbar-bgcolor);
+    --base-200: hsl(from var(--base-100)h s calc(l - 5));
+    --base-300: hsl(from var(--base-200)h s calc(l - 5));
+    --content-border: 1px solid var(--base-200);
+    --content-border-radius: var(--lg);
 }
 html {
     --custom-bg-light: #f1f1fa;
@@ -528,54 +594,27 @@ padding-bottom: 0px;
 background: var(--custom-bg) !important;
 border-bottom: 0 !important;
 }
-
-/* Sidebar */
-html:not([privatebrowsingmode="temporary"]) #sidebar-header {
-    display: none;
+#browser{
+padding: 0rem .618rem .618rem .618rem;
+backdrop-filter: blur(1rem);
+background-color: var(--base-100) !important;
 }
 
-html:not([privatebrowsingmode="temporary"]) #sidebar-box {
-    --uc-sidebar-width: 45px;
-    --uc-sidebar-hover-width: 360px;
-    --uc-autohide-sidebar-delay-before: 125ms;
-    --uc-autohide-sidebar-delay-after: 300ms;
-    --uc-autohide-transition-duration: 300ms;
-    --uc-autohide-transition-type: ease-in-out;
-    position: relative;
-    min-width: var(--uc-sidebar-width) !important;
-    width: var(--uc-sidebar-width) !important;
-    max-width: var(--uc-sidebar-width) !important;
-    z-index: 1;
+#tabbrowser-tabpanels{
+border: var(--content-border);
+border-radius: var(--content-border-radius);
+box-shadow: var(--shadow);
+overflow: hidden
 }
-
-#sidebar-box[positionend]{ direction: rtl }
-#sidebar-box[positionend] > *{ direction: ltr }
-
-#sidebar-box[positionend]:-moz-locale-dir(rtl){ direction: ltr }
-#sidebar-box[positionend]:-moz-locale-dir(rtl) > *{ direction: rtl }
-
-html:not([privatebrowsingmode="temporary"])
-#main-window[sizemode="fullscreen"]
-#sidebar-box {
---uc-sidebar-width: 1px;
-}
-
-html:not([privatebrowsingmode="temporary"]) #sidebar-splitter {
-    display: none;
-}
-
-html:not([privatebrowsingmode="temporary"]) #sidebar {
-    transition: all var(--uc-autohide-transition-duration)
-    var(--uc-autohide-transition-type) var(--uc-autohide-sidebar-delay-after) !important;
-    min-width: var(--uc-sidebar-width) !important;
-}
-
-html:not([privatebrowsingmode="temporary"]) #sidebar-box:hover > #sidebar {
-    min-width: var(--uc-sidebar-hover-width) !important;
-    transition-delay: var(--uc-autohide-sidebar-delay-before) !important;
-}
-
-html:not([privatebrowsingmode="temporary"]) .sidebar-panel {
-    background-color: transparent !important;
-    color: var(--newtab-text-primary-color) !important;
+/* Floating Statusbar */
+@-moz-document url-prefix("chrome:") {
+    #statuspanel {
+    margin: 10px !important;
+    }
+    #statuspanel-label {
+    border-radius: var(--lg) !important;
+    padding: 2px 10px !important;
+    border: 1px solid var(--base-100) !important;
+    background: var(--custom-bg) !important;
+    }
 }
