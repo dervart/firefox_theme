@@ -17,4 +17,4 @@ Firefox CSS theme with oneline and vertical tabs sidebar based on Sidebery.
 
 ## Credits
 MrOtherGuy for his amazing firefox css sidebar autoclose hack - ![hacks](https://github.com/MrOtherGuy/firefox-csshacks)
-zayihu - ![hacks](https://github.com/zayihu/Minimal-Arc)
+zayihu - ![Minimal-Arc ](https://github.com/zayihu/Minimal-Arc)
