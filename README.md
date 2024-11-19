@@ -1,9 +1,9 @@
-# Minimal Arc by ![@zayihu](https://github.com/zayihu/Minimal-Arc)
+# Oneliner with Sidebery by ![@dervart](https://github.com/dervart/firefox_theme)
 <p>
-Firefox CSS theme with minimal vertical tabs sidebar based on Sidebery.
+Firefox CSS theme with oneline and vertical tabs sidebar based on Sidebery.
 </p>
 
-![](https://github.com/zayihu/Minimal-Arc/blob/main/preview.gif)
+![](https://github.com/dervart/firefox_theme/blob/main/preview.gif)
 
 ## Required
 - Sidebery
@@ -17,3 +17,4 @@ Firefox CSS theme with minimal vertical tabs sidebar based on Sidebery.
 
 ## Credits
 MrOtherGuy for his amazing firefox css sidebar autoclose hack - ![hacks](https://github.com/MrOtherGuy/firefox-csshacks)
+zayihu - ![hacks](https://github.com/zayihu/Minimal-Arc)
