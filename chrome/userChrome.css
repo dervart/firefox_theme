@@ -1,13 +1,7 @@
-/* 1.6.1
-- Prevent single tab window controls from overlaping website content (#16)
-    the bookmarks bar will still be overlaped, difficult to fix
-*/
-
 :root {
     --urlbar-collapsed-width: 500px;
     --urlbar-open-width: 500px; /* Only when disable-centering-of-URLbar is enabled */
 }
-
 #navigator-toolbox {
     display: flex;
     flex-wrap: wrap;
@@ -15,15 +9,11 @@
     position: relative !important;
     padding-left: var(--tab-block-margin);
 }
-
-
 /* Hide flexible spaces */
 toolbarspring,
 [id^="wrapper-customizableui-special-spring"] {
     display: none !important;
 }
-
-
 /* Tabs */
 #titlebar {
     width: 0;
@@ -58,7 +48,6 @@ toolbarspring,
     box-shadow: none !important;
     transition: background-color .2s;
 }
-
 @media (-moz-bool-pref: "onebar.hide-all-tabs-button") {
     @media not (max-width: 700px) {
         #alltabs-button {
@@ -66,8 +55,6 @@ toolbarspring,
         }
     }
 }
-
-
 /* Navigation buttons */
 @media (-moz-bool-pref: "onebar.conditional-navigation-buttons") {
     :root:not([customizing]) #back-button[disabled],
@@ -109,11 +96,6 @@ toolbarspring,
 :root[customizing] #urlbar-input {
     display: none !important;
 }
-
-
-
-
-
 /* Single Tab, *properties* also copy & pasted into "Small Window Fixes" */
 /*@media (not (-moz-bool-pref: "onebar.disable-single-tab")) {
     #titlebar #tabbrowser-tabs .tabbrowser-tab:only-of-type {
@@ -135,8 +117,6 @@ toolbarspring,
     }
 }
 */
-
-
 /* Match button sizes to toolbar buttons */
 #TabsToolbar {
     --toolbarbutton-inner-padding: 8px !important;
@@ -144,15 +124,12 @@ toolbarspring,
 #TabsToolbar toolbarbutton {
     margin: 0 !important;
 }
-
-
 #alltabs-button {
     order: -1;
 }
 .titlebar-buttonbox-container {
     order: -100 !important;
 }
-
 /* Toolbar */
 #nav-bar {
     background: none !important;
@@ -215,7 +192,6 @@ toolbarspring,
 #urlbar:hover:not([focused="true"]) > #urlbar-background {
     --toolbar-field-border-color: var(--toolbar-field-focus-border-color)
 }
-
 /* Truncate https:// when collapsed
 @media (not (-moz-bool-pref: "onebar.disable-https-truncate")) and (not (-moz-bool-pref: "browser.urlbar.trimHttps")) {
     #urlbar-input {
@@ -226,7 +202,6 @@ toolbarspring,
         mask: linear-gradient(to right, transparent 4ch, black 5ch calc(100% - 3ch), transparent) !important;
     }
 }*/
-
 /* Hide unimportant buttons until hover */
 :root {
     --in-transition: font-size .2s, padding .2s, margin .2s, max-width .2s, opacity .2s .15s;
@@ -280,41 +255,29 @@ toolbarspring,
     opacity: 0 !important;
     transition: var(--out-transition) !important;
 }
-
 /* Other Buttons */
-
 .toolbarbutton-icon {
     transition: background-color .1s;
 }
-
 #nav-bar #search-container {
     min-width: 32px !important;
     transition: min-width .2s;
 }
-
 .titlebar-spacer,
 #identity-icon-label {
     display: none;
 }
-
 @media (-moz-bool-pref: "onebar.hide-unified-extensions-button") {
     #unified-extensions-button, #unified-extensions-button > .toolbarbutton-icon{
         width: 0px !important;
         padding: 0px !important;
     }
 }
-
 /* Wrap other toolbars to bottom */
 #nav-bar ~ * {
     width: 100vw !important;
 }
-
-
-
-
-
 /* Linux fixes, credits: https://github.com/ranmaru22/firefox-vertical-tabs/pull/39 */
-
 @media (-moz-gtk-csd-available) {
     /* window control padding values (these don't change the size of the actual buttons, only the padding for the navbar) */
     :root[tabsintitlebar] {
@@ -322,13 +285,11 @@ toolbarspring,
         --uc-win-ctrl-btn-width: 38px;
         --uc-win-ctrl-padding: 12px;
     }
-
     :root[tabsintitlebar][lwtheme] {
         /* seperate values for when using a theme, based on the Firefox defaults */
         --uc-win-ctrl-btn-width: 30px;
         --uc-win-ctrl-padding: 12px;
     }
-
     /* setting the padding value for all button combinations */
     @media (-moz-gtk-csd-minimize-button),
     (-moz-gtk-csd-maximize-button),
@@ -337,7 +298,6 @@ toolbarspring,
             --uc-navbar-padding: calc(var(--uc-win-ctrl-btn-width) * 1);
         }
     }
-
     @media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
     (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
     (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
@@ -345,13 +305,11 @@ toolbarspring,
             --uc-navbar-padding: calc(var(--uc-win-ctrl-btn-width) * 2);
         }
     }
-
     @media (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
         #navigator-toolbox {
             --uc-navbar-padding: calc(var(--uc-win-ctrl-btn-width) * 3);
         }
     }
-
     /* only applies padding/positioning if there is 1 or more buttons */
     @media (-moz-gtk-csd-minimize-button),
     (-moz-gtk-csd-maximize-button),
@@ -385,14 +343,12 @@ toolbarspring,
         }
     }
 }
-
 /* MacOS fixes */
 @media (-moz-platform: macos) {
     .titlebar-buttonbox-container {
         margin-right: 10px;
     }
 }
-
 /* Windows OS fixes */
 @media (-moz-platform: windows-win10), (-moz-platform: windows) {
     :root[tabsintitlebar]{
@@ -422,14 +378,11 @@ toolbarspring,
     }
 
 }
-
 /* Small window */
-
 @media (max-width: 700px) {
     #nav-bar {
         width: 100% !important;
     }
-
     @media (-moz-gtk-csd-minimize-button),
     (-moz-gtk-csd-maximize-button),
     (-moz-gtk-csd-close-button) {
@@ -440,7 +393,6 @@ toolbarspring,
             }
         }
     }
-
     #TabsToolbar {
         width: 100vw;
     }
@@ -483,7 +435,6 @@ toolbarspring,
         inset-inline: 15px !important;
         z-index: 102 !important;
     }
-
     /* Single Tab styling */
     #titlebar #tabbrowser-tabs .tabbrowser-tab {
         -moz-box-flex: unset !important;
@@ -500,12 +451,10 @@ toolbarspring,
     .tabbrowser-tab .tab-background {
         display: none !important;
     }
-
     .tabbrowser-tab:not([visuallyselected]) {
         display: none !important;
     }
 }
-
 /* Sidebar */
 html:not([privatebrowsingmode="temporary"]) #sidebar-header {
     display: none;
@@ -531,13 +480,10 @@ html:not([privatebrowsingmode="temporary"]) #sidebar-box {
     border-radius: var(--content-border-radius);
     background-color: var(--base-100) !important;
 }
-
 #sidebar-box[positionend]{ direction: rtl }
 #sidebar-box[positionend] > *{ direction: ltr }
-
 #sidebar-box[positionend]:-moz-locale-dir(rtl){ direction: ltr }
 #sidebar-box[positionend]:-moz-locale-dir(rtl) > *{ direction: rtl }
-
 html:not([privatebrowsingmode="temporary"])
 #main-window[sizemode="fullscreen"]
 #sidebar-box {
@@ -599,7 +545,6 @@ padding: 0rem .618rem .618rem .618rem;
 backdrop-filter: blur(1rem);
 background-color: var(--base-100) !important;
 }
-
 #tabbrowser-tabpanels{
 border: var(--content-border);
 border-radius: var(--content-border-radius);
@@ -669,4 +614,3 @@ overflow: hidden
         opacity: 1 !important;
     }
 }
-
