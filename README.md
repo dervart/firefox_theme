@@ -12,8 +12,10 @@ Firefox CSS theme with oneline and vertical tabs sidebar based on Sidebery.
 - Sidebery
 
 ## Usage
-- Set toolkit.legacyUserProfileCustomizations.stylesheets to true.
-- Download userChrome.css from /chrome and add to Firefox user profile folder under /chrome.
+- Go to `about:config` in your Firefox and set the value of `toolkit.legacyUserProfileCustomizations.stylesheets` to true.
+- Download userChrome.css from /chrome.
+- Go to `about:profiles` in Firefox and open your Profile Folder by selecting root directory
+- Add to Firefox user profile folder under /chrome downloaded userChrome.css.
 
 ## Optional
 - Install Sidebery addon in Firefox from Firefox Addon Store.
