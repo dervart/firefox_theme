@@ -614,3 +614,39 @@ overflow: hidden
         opacity: 1 !important;
     }
 }
+/* Icons only tabs with expand on hover and active tab */
+ .tab-text{
+    margin-left: .5rem !important;
+ }
+ .tab-close-button{
+     display: none;
+}
+ .tab-content[selected="false"] > :not(.tab-icon-stack){
+     display: none;
+ }
+ .tab-content:hover > :not(.tab-icon-stack){
+     display: flex;
+ }
+ .tab-icon-image:not([src]){
+     display: block !important;
+ }
+ .tab-icon-stack > *{ margin-inline: 0 !important; }
+ .tabbrowser-tab{
+     flex-grow: 0 !important;
+        transition: flex-grow 0.3s !important;
+ }
+ .tabbrowser-tab:not([pinned]):hover{
+     flex-grow: 1 !important;
+ }
+ .tabbrowser-tab:not([pinned])[selected="true"]{
+     flex-grow: 1 !important;
+ }
+ .tabbrowser-tab[fadein]{ min-width: calc(16px + 2 * 10px + 4px) !important; }
+ :root[uidensity="compact"] .tabbrowser-tab[fadein]{
+     min-width: calc(16px + 2 * var(--tab-inline-padding,0px) + 4px) !important;
+ }
+ :root:not([uidensity="compact"]) .tab-content{ padding-inline: 10px !important; }
+ .tabbrowser-tab:not([pinned]):hover .tab-close-button{
+     display: flex !important;
+     align-items: center;
+ }
