@@ -633,7 +633,7 @@ overflow: hidden
  .tab-icon-stack > *{ margin-inline: 0 !important; }
  .tabbrowser-tab{
      flex-grow: 0 !important;
-        transition: flex-grow 0.3s !important;
+        transition: flex-grow 1.5s !important;
  }
  .tabbrowser-tab:not([pinned]):hover{
      flex-grow: 1 !important;
